@@ -87,7 +87,21 @@ eht: the
 
 ## Solutions
 
-### (165) Python by Duarte (w/o imports)
+### (149) Python by Teo (w/o imports) / 192 with imports
+```python
+# with imports
+import re,sys;w,s={},sorted
+for x in re.split('\W',sys.stdin.read().lower()):f=''.join(s(x));w[f]=w.get(f,[])+[x]
+[print(k+': '+','.join(s(set(w[k]))))for k in s(w)if int(sys.argv[1])==len(k)]
+
+# without imports
+import re;from sys import stdin as k,argv as h;from collections import defaultdict as d
+w,s=d(set),sorted
+[w[''.join(s(x))].add(x)for x in re.split('\W',k.read().lower())if int(h[1])==len(x)]
+for j in s(w):print(j+': '+','.join(s(w[j])))
+```
+
+### (165) Python by Duarte (w/o imports) / 235 with imports
 ```python
 import re as e
 import sys as y
